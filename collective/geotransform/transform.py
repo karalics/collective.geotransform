@@ -21,7 +21,7 @@ def replaceMailTos(source):
     Replace mailto href strings with encrypted geomailto href strings
     """
     soup = BeautifulSoup(source, 'lxml')
-    mailtoTags = soup.select('a[href^=mailto:]')
+    mailtoTags = soup.select('a[href^="mailto:"]')
     for tag in mailtoTags:
         address = tag.get('href')[7:]
         try:
